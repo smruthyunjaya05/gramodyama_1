@@ -1,0 +1,23 @@
+.notifications-container,
+.profile-container {
+  padding: 16px;
+  margin-bottom: 60px; /* Space for navbar */
+}
+
+.notifications-container h2,
+.profile-container h2 {
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.notifications-list,
+.profile-content {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+} 

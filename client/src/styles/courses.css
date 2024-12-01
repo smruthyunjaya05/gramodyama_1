@@ -1,0 +1,591 @@
+.courses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.filter-section {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    border: 2px solid #3f51b5;
+    background: transparent;
+    color: #3f51b5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+  .filter-btn.active {
+      background: #3f51b5;
+      color: white;
+  }
+
+  .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+  }
+
+  .course-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .course-info {
+      margin: 1rem 0;
+  }
+
+  .label {
+      font-weight: 600;
+      color: #666;
+      margin-right: 0.5rem;
+  }
+
+  .tutor-link {
+      color: #3f51b5;
+      cursor: pointer;
+      text-decoration: underline;
+  }
+
+  .category-tag {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: #e3f2fd;
+      color: #1976d2;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+  }
+
+  .view-details-btn, .register-btn, .continue-btn {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-weight: 500;
+  }
+
+  .view-details-btn {
+      background: #3f51b5;
+      color: white;
+  }
+
+  .register-btn {
+      background: #4caf50;
+      color: white;
+  }
+
+  .continue-btn {
+      background: #2196f3;
+      color: white;
+  }
+
+  /* Course Detail Styles */
+  .course-detail-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-detail-content {
+    margin-top: 2rem;
+}
+
+.course-timeline {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.course-syllabus ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-syllabus li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.user-courses-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.user-courses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.registered-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.registered-course-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.course-progress-indicator {
+    position: relative;
+    width: fit-content;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+.course-info {
+    flex: 1;
+}
+
+.course-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.continue-btn, 
+.certificate-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.continue-btn {
+    background: #3f51b5;
+    color: white;
+    flex: 2;
+}
+
+.certificate-btn {
+    background: #4caf50;
+    color: white;
+    flex: 1;
+}
+
+.no-courses-message {
+    text-align: center;
+    padding: 3rem;
+    background: #f5f5f5;
+    border-radius: 12px;
+
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 2rem;
+    font-size: 1.1rem;}
+
+
+.register-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.no-courses-message {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.browse-courses-btn {
+    padding: 0.8rem 2rem;
+    background: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+  .course-progress-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+  }
+
+  .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+  }
+
+  .overall-progress {
+      position: relative;
+      width: 80px;
+      height: 80px;
+  }
+
+  .progress-percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      font-weight: bold;
+  }
+
+  .modules-list {
+    margin: 2rem 0;
+}
+
+  .module-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .module-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+  }
+
+  .duration {
+      color: #666;
+      font-size: 0.9rem;
+  }
+
+  .module-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .module-completion {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+  }
+
+  .progress-indicator {
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  }
+
+  .completion-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+  }
+
+  .completion-checkbox input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+  }
+
+.certificate-container {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #e8f5e9;
+    border-radius: 8px;
+}
+
+.certificate-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+.course-reviews {
+    margin: 2rem 0;
+}
+
+.add-review {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.add-review textarea {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 100px;
+}
+
+.review-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.review-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.course-detail-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.course-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.course-description,
+.course-syllabus {
+    margin: 2rem 0;
+}
+
+.course-syllabus ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course-syllabus li {
+    padding: 0.8rem;
+    background: #f5f5f5;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}    gap
+.certificate-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+.certificate-preview {
+    background: white;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-preview h2 {
+    color: #4caf50;
+    margin-bottom: 1.5rem;
+}
+
+.download-certificate-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.download-certificate-btn:hover {
+    background: #388e3c;
+}
+
+.training-buttons {
+    display: grid;
+    gap: 1rem;
+}
+
+.training-buttons .expert-card {
+    margin: 0;
+}
+
+.expert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.training-card {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-learning-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: calc(100vh - 64px);
+}
+
+.learning-sidebar {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-right: 1px solid #ddd;
+}
+
+.modules-list {
+    margin-top: 1.5rem;
+}
+
+.module-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.module-item:hover {
+    background: #e0e0e0;
+}
+
+.module-item.active {
+    background: #e3f2fd;
+}
+
+.completed-icon {
+    color: #4caf50;
+}
+
+.learning-content {
+    padding: 2rem;
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 2rem;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.complete-module-btn {
+    padding: 1rem 2rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.complete-module-btn:disabled {
+    background: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.get-certificate-btn {
+    padding: 1rem 2rem;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+.courses-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.course-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-info {
+    margin: 1rem 0;
+}
+
+.view-details-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}

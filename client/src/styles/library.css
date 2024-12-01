@@ -1,0 +1,130 @@
+.library-page {
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #f8f9fa;
+}
+
+.library-page h2 {
+    font-size: 2.5rem;
+    color: #1a237e;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 15px;
+}
+
+.videos-container,
+.articles-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #3f51b5;
+    border-radius: 20px;
+    background: transparent;
+    color: #3f51b5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: #3f51b5;
+    color: white;
+}
+
+.videos-grid,
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.video-card,
+.article-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover,
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-card iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.content-info {
+    padding: 1.5rem;
+}
+
+.content-info h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.content-info p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: #e3f2fd;
+    color: #1976d2;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .library-page {
+        padding: 15px;
+    }
+    
+    .filter-controls {
+        flex-wrap: wrap;
+    }
+    
+    .videos-grid,
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+}

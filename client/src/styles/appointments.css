@@ -1,0 +1,22 @@
+.booking-details {
+    padding: 20px;
+}
+
+.time-slots {
+    margin-top: 20px;
+}
+
+.time-slot {
+    margin: 5px;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+}
+
+.time-slot.selected {
+    background: #2196F3;
+    color: white;
+    border-color: #2196F3;
+}
