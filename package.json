@@ -59,6 +59,7 @@
     "has-symbols": "^1.0.3",
     "hasown": "^2.0.2",
     "hoist-non-react-statics": "^3.3.2",
+    "html2canvas": "^1.4.1",
     "http-errors": "^2.0.0",
     "iconv-lite": "^0.4.24",
     "import-fresh": "^3.3.0",

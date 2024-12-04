@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import SchemeDetails from './pages/SchemeDetails';
+
 import ResourceLibrary from './pages/ResourceLibrary';
 import Notifications from './pages/Notifications';
 import Profile from './pages/Profile';
@@ -19,13 +19,22 @@ import UserCourses from './components/courses/UserCourses';
 import Certificate from './components/courses/Certificate';
 import CourseProgress from './components/courses/CourseProgress';
 import CourseLearning from './components/courses/CourseLearning';
+import SchemesList from './components/schemes/SchemesList';
+import SchemeDetails from './components/schemes/SchemeDetails';
+import ApplicationProcess from './components/schemes/ApplicationProcess';
+import IdeasHub from './components/ideas/IdeasHub';
+
+import CreatePost from './components/ideas/CreatePost';
+import IdeaFeed from './components/ideas/IdeaFeed';
+import IdeaDetail from './components/ideas/IdeaDetail';
+import InvestmentPage from './components/ideas/InvestmentPage';
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="scheme-details" element={<SchemeDetails />} />
+         
           <Route path="/" element={<SkillsDevelopment />} />
           <Route path="/experts/:expertType" element={<ExpertList />} />
           <Route path="/experts/:expertType/:expertId" element={<ExpertProfile />} />
@@ -39,10 +48,23 @@ function App() {
           <Route path="/courses" element={<CoursesList />} />
           <Route path="/courses/:id" element={<CourseDetail />} />
           <Route path="/my-courses" element={<UserCourses />} />
-          
+          <Route path="/certificates" element={<Certificate />} />
+          <Route path="/schemes" element={<SchemesList />} />
+          <Route path="/schemes/:id" element={<SchemeDetails />} />
+          <Route path="/schemes/:id/apply" element={<ApplicationProcess />} />
+          <Route path="/ideas" element={<IdeasHub />} />
+          <Route path="/courses/:id/certificate" element={<Certificate />} />
           <Route path="/courses/:id/progress" element={<CourseProgress />} />
           <Route path="/courses/:id/learn" element={<CourseLearning />} />
+          <Route path="/ideas/create" element={<CreatePost />} />
+          <Route path="/ideas" element={<IdeaFeed />} />
+          <Route path="/ideas/:id" element={<IdeaDetail />} />
+          <Route path="/ideas/:id/invest" element={<InvestmentPage />} />
           
+                
+
+
+
           
 
 
@@ -56,3 +78,5 @@ function App() {
 export default App;
 
 
+
+import './styles/schemes.css';

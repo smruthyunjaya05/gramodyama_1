@@ -1,0 +1,51 @@
+.resources-content {
+  padding: 20px;
+}
+
+.schemes-section {
+  margin-bottom: 30px;
+}
+
+.schemes-section h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.schemes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.scheme-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.scheme-card:hover {
+  transform: translateY(-2px);
+}
+
+.scheme-card svg {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: #4a90e2;
+}
+
+.scheme-card div {
+  flex: 1;
+}
+
+.scheme-card p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.scheme-card p:first-child {
+  font-weight: bold;
+}
