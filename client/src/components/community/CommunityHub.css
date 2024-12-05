@@ -1,0 +1,71 @@
+.community-container {
+  padding: 24px;
+}
+
+.discussion-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.message-list {
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.message-item {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.message-input {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 0 0 12px 12px;
+}
+
+.members-list {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #6c757d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-button {
+  padding: 4px 8px;
+  border-radius: 16px;
+  background: #f8f9fa;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.like-button:hover {
+  background: #e9ecef;
+}

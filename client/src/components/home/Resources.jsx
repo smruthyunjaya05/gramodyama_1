@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { 
     Agriculture,
     Store,
-    Apartment,
     Star,
     VideoCall,
     TrendingUp,
@@ -12,8 +11,8 @@ import {
 const Resources = () => {
   const navigate = useNavigate();
 
-  const handleViewIdeas = () => {
-    navigate('/ideas');
+  const handleAnalyticsClick = () => {
+    navigate('/dashboard');
   };
 
   return (
@@ -41,35 +40,37 @@ const Resources = () => {
           </div>
         </div>
       </section>
-        <section className="schemes-section">
-          <h3>ಕಲ್ಪನೆಗಳು ಮತ್ತು ಹೂಡಿಕೆ</h3>
-          <div className="schemes-grid">
-            <div 
-              className="scheme-card"
-              onClick={() => navigate('/ideas/create')}
-              style={{ cursor: 'pointer' }}
-            >
-              <Star />
-              <div>
-                <p>ನಿಮ್ಮ ಕಲ್ಪನೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ</p>
-              </div>
-            </div>
-            <div 
-              className="scheme-card"
-              onClick={handleViewIdeas}
-              style={{ cursor: 'pointer' }}
-            >
-              <VideoCall />
-              <div>
-                <p>ಹೊಸ ನೋಡಿ</p>
-              </div>
+
+      <section className="schemes-section">
+        <h3>ಕಲ್ಪನೆಗಳು ಮತ್ತು ಹೂಡಿಕೆ</h3>
+        <div className="schemes-grid">
+          <div 
+            className="scheme-card"
+            onClick={() => navigate('/ideas/create')}
+            style={{ cursor: 'pointer' }}
+          >
+            <Star />
+            <div>
+              <p>ನಿಮ್ಮ ಕಲ್ಪನೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ</p>
             </div>
           </div>
-        </section>
+          <div 
+            className="scheme-card"
+            onClick={() => navigate('/ideas')}
+            style={{ cursor: 'pointer' }}
+          >
+            <VideoCall />
+            <div>
+              <p>ಹೊಸ ನೋಡಿ</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="schemes-section">
         <h3>ಯಶೋಗಾಥೆಗಳು</h3>
         <div className="schemes-grid">
-          <div className="scheme-card">
+          <div className="scheme-card" onClick={handleAnalyticsClick}>
             <TrendingUp />
             <div>
               <p>ಬೆಳವಣಿಗೆ ವಿಶ್ಲೇಷಣೆ</p>
@@ -88,4 +89,3 @@ const Resources = () => {
 };
 
 export default Resources;
-import './Resources.css'

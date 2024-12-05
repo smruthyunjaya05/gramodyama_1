@@ -1,0 +1,87 @@
+.dashboard-container {
+  padding: 24px;
+}
+
+.portfolio-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-2px);
+}
+
+.chart-container {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.investment-list {
+  margin-top: 24px;
+}
+
+.investment-item {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.stat-card {
+  padding: 16px;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+.chart-controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+.chart-container {
+  height: 400px;
+  margin: 20px 0;
+}
+
+.recharts-wrapper {
+  margin: 0 auto;
+}
+
+.filter-section {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.chart-tabs {
+  border-bottom: 1px solid #eee;
+}
+
+.chart-tab {
+  padding: 12px 24px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.chart-tab.active {
+  border-bottom-color: #8884d8;
+  color: #8884d8;
+}
