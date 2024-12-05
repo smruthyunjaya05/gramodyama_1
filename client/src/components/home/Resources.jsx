@@ -31,13 +31,7 @@ const Resources = () => {
               <p>ಅರ್ಜಿ ಸಲ್ಲಿಸಿ</p>
             </div>
           </div>
-          <div className="scheme-card">
-            <Store />
-            <div>
-              <p>ಮಾರ್ಗದರ್ಶಿ</p>
-              <p>ಪರಿಶೀಲನೆ ಮುದ</p>
-            </div>
-          </div>
+          
         </div>
       </section>
 
