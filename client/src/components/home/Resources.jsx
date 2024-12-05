@@ -15,6 +15,10 @@ const Resources = () => {
     navigate('/dashboard');
   };
 
+  const handleMagazineClick = () => {
+    navigate('/magazine');
+  };
+
   return (
     <div className="resources-content">
       <section className="schemes-section">
@@ -70,7 +74,11 @@ const Resources = () => {
               <p>ಬೆಳವಣಿಗೆ ವಿಶ್ಲೇಷಣೆ</p>
             </div>
           </div>
-          <div className="scheme-card">
+          <div 
+            className="scheme-card" 
+            onClick={handleMagazineClick}
+            style={{ cursor: 'pointer' }}
+          >
             <Person />
             <div>
               <p>ಸಮುದಾಯ ಪ್ರತಿಕ್ರಿಯೆ</p>

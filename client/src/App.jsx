@@ -23,15 +23,21 @@ import SchemesList from './components/schemes/SchemesList';
 import SchemeDetails from './components/schemes/SchemeDetails';
 import ApplicationProcess from './components/schemes/ApplicationProcess';
 import IdeasHub from './components/ideas/IdeasHub';
-import Resources from './components/home/Resources';
+
 import CreatePost from './components/ideas/CreatePost';
 import IdeaFeed from './components/ideas/IdeaFeed';
 import IdeaDetail from './components/ideas/IdeaDetail';
 import InvestmentPage from './components/ideas/InvestmentPage';
 import InvestmentDashboard from './components/dashboard/InvestmentDashboard';
 import CommunityHub from './components/community/CommunityHub';
+import MagazineHome from './components/magazine/MagazineHome';
+import SubmitArticle from './components/magazine/SubmitArticle';
+
+
+import ArticleDetail from './components/magazine/ArticleDetail';
 
 function App() {
+  
   return (
     <Router>
       <Routes>
@@ -65,8 +71,11 @@ function App() {
           <Route path="/ideas/:id/invest" element={<InvestmentPage />} />
           <Route path="/dashboard" element={<InvestmentDashboard />} />
           <Route path="/community/:ideaId" element={<CommunityHub />} />
+          <Route path="/" element={<Home />} />
           
-
+          <Route path="/magazine" element={<MagazineHome />} />
+          <Route path="/magazine/submit" element={<SubmitArticle />} />
+          <Route path="/magazine/article/:id" element={<ArticleDetail />} />
           
 
 

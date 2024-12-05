@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.x.x",
-    "@emotion/styled": "^11.x.x",
-    "@mui/icons-material": "^5.x.x",
-    "@mui/material": "^5.x.x",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/icons-material": "^5.16.9",
+    "@mui/material": "^5.16.9",
     "react": "^18.x.x",
     "react-datepicker": "^7.5.0",
     "react-dom": "^18.x.x",

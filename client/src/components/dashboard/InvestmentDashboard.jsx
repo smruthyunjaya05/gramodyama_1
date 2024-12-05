@@ -14,22 +14,10 @@ import {
     Tab,
     Button
 } from '@mui/material';
-import {
-    AreaChart, 
-    Area, 
-    PieChart, 
-    Pie, 
-    Cell,
-    ResponsiveContainer, 
-    BarChart, 
-    Bar,
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend
+import { 
+    LineChart, Line, PieChart, Pie, Cell,
+    ResponsiveContainer, XAxis, YAxis,
+    CartesianGrid, Tooltip, Legend 
 } from 'recharts';
 
 const InvestmentDashboard = () => {
@@ -37,7 +25,6 @@ const InvestmentDashboard = () => {
     const [investments, setInvestments] = useState([]);
     const [portfolioValue, setPortfolioValue] = useState(0);
     const [timeFilter, setTimeFilter] = useState('all');
-    const [chartType, setChartType] = useState('area');
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
     useEffect(() => {
@@ -49,7 +36,8 @@ const InvestmentDashboard = () => {
             id: idea.id,
             title: idea.title,
             value: idea.stats.investments.total || 0,
-            timestamp: idea.stats.investments.commitments[0].timestamp
+            timestamp: idea.stats.investments.commitments[0].timestamp,
+            stats: idea.stats
         }));
 
         setInvestments(userInvestments);
@@ -75,71 +63,59 @@ const InvestmentDashboard = () => {
         });
     };
 
-    const renderChart = () => {
+    const renderPieChart = () => {
         const data = getFilteredData();
         
-        if (data.length === 0) {
-            return (
-                <Typography variant="h6" align="center" sx={{ py: 4 }}>
-                    ಯಾವುದೇ ಹೂಡಿಕೆಗಳು ಲಭ್ಯವಿಲ್ಲ
-                </Typography>
-            );
-        }
+        return (
+            <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                    <Pie
+                        data={data}
+                        dataKey="value"
+                        nameKey="title"
+                        cx="50%"
+                        cy="50%"
+                        outerRadius={100}
+                        label={({name, percent}) => `${name} (${(percent * 100).toFixed(0)}%)`}
+                    >
+                        {data.map((entry, index) => (
+                            <Cell key={index} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                    </Pie>
+                    <Tooltip />
+                    <Legend />
+                </PieChart>
+            </ResponsiveContainer>
+        );
+    };
 
-        switch(chartType) {
-            case 'area':
-                return (
-                    <ResponsiveContainer width="100%" height={300}>
-                        <AreaChart data={data}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="title" />
-                            <YAxis />
-                            <Tooltip />
-                            <Area 
-                                type="monotone" 
-                                dataKey="value" 
-                                stroke="#8884d8"
-                                fill="#8884d8" 
-                            />
-                        </AreaChart>
-                    </ResponsiveContainer>
-                );
-            case 'pie':
-                return (
-                    <ResponsiveContainer width="100%" height={300}>
-                        <PieChart>
-                            <Pie
-                                data={data}
-                                dataKey="value"
-                                nameKey="title"
-                                cx="50%"
-                                cy="50%"
-                                outerRadius={100}
-                                label
-                            >
-                                {data.map((entry, index) => (
-                                    <Cell key={index} fill={COLORS[index % COLORS.length]} />
-                                ))}
-                            </Pie>
-                            <Tooltip />
-                        </PieChart>
-                    </ResponsiveContainer>
-                );
-            case 'bar':
-                return (
-                    <ResponsiveContainer width="100%" height={300}>
-                        <BarChart data={data}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="title" />
-                            <YAxis />
-                            <Tooltip />
-                            <Bar dataKey="value" fill="#8884d8" />
-                        </BarChart>
-                    </ResponsiveContainer>
-                );
-            default:
-                return null;
-        }
+    const renderInvestmentGraph = (investment) => {
+        // Create time-series data for individual investment
+        const commitments = investment.stats?.investments?.commitments || [];
+        const timeData = commitments.map(commit => ({
+            date: new Date(commit.timestamp).toLocaleDateString(),
+            value: commit.amount,
+            totalValue: investment.value,
+            growthRate: ((investment.value / commit.amount - 1) * 100).toFixed(2)
+        }));
+
+        return (
+            <ResponsiveContainer width="100%" height={200}>
+                <LineChart data={timeData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Line 
+                        type="monotone" 
+                        dataKey="value" 
+                        stroke="#8884d8" 
+                        name="ಹೂಡಿಕೆ ಮೌಲ್ಯ"
+                    />
+                </LineChart>
+            </ResponsiveContainer>
+        );
     };
 
     const handleCommunityClick = (ideaId) => {
@@ -149,44 +125,29 @@ const InvestmentDashboard = () => {
     return (
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
+                {/* Portfolio Overview with Pie Chart */}
                 <Grid item xs={12}>
-                    <Box sx={{ display: 'flex', gap: 2, mb: 3 }}>
-                        <FormControl sx={{ minWidth: 120 }}>
-                            <InputLabel>ಸಮಯ ಅವಧಿ</InputLabel>
-                            <Select
-                                value={timeFilter}
-                                onChange={(e) => setTimeFilter(e.target.value)}
-                            >
-                                <MenuItem value="all">ಎಲ್ಲಾ</MenuItem>
-                                <MenuItem value="month">ತಿಂಗಳು</MenuItem>
-                                <MenuItem value="quarter">ತ್ರೈಮಾಸಿಕ</MenuItem>
-                                <MenuItem value="year">ವರ್ಷ</MenuItem>
-                            </Select>
-                        </FormControl>
-                        <Tabs 
-                            value={chartType} 
-                            onChange={(e, v) => setChartType(v)}
-                        >
-                            <Tab label="ಏರಿಯಾ" value="area" />
-                            <Tab label="ಪೈ" value="pie" />
-                            <Tab label="ಬಾರ್" value="bar" />
-                        </Tabs>
-                    </Box>
                     <Card sx={{ p: 3 }}>
-                        {renderChart()}
+                        <Typography variant="h5" gutterBottom>
+                            ಹೂಡಿಕೆ ವಿತರಣೆ
+                        </Typography>
+                        {renderPieChart()}
                     </Card>
                 </Grid>
 
-                {/* Investment List */}
-                <Grid item xs={12}>
-                    <Card sx={{ p: 3 }}>
-                        <Typography variant="h5" gutterBottom>ನಿಮ್ಮ ಹೂಡಿಕೆಗಳು</Typography>
-                        {investments.map((investment) => (
-                            <Box key={investment.title} sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                {/* Individual Investment Cards */}
+                {investments.map((investment) => (
+                    <Grid item xs={12} key={investment.id}>
+                        <Card sx={{ p: 3 }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
                                 <div>
                                     <Typography variant="h6">{investment.title}</Typography>
                                     <Typography color="textSecondary">
                                         ಹೂಡಿಕೆ: ₹{investment.value}
+                                    </Typography>
+                                    <Typography color="textSecondary">
+                                        ಪೋರ್ಟ್‌ಫೋಲಿಯೊ %: 
+                                        {((investment.value / portfolioValue) * 100).toFixed(2)}%
                                     </Typography>
                                 </div>
                                 <Button 
@@ -196,12 +157,12 @@ const InvestmentDashboard = () => {
                                     ಸಮುದಾಯ ಹಬ್
                                 </Button>
                             </Box>
-                        ))}
-                    </Card>
-                </Grid>
+                            {renderInvestmentGraph(investment)}
+                        </Card>
+                    </Grid>
+                ))}
             </Grid>
         </Container>
     );
 };
-
 export default InvestmentDashboard;
