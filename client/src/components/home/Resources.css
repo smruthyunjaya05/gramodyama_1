@@ -5,6 +5,7 @@
   margin: 0 auto; /* Center the container horizontally */
   background-color: #f8f8f8; /* Light background color for the whole page */
   border-radius: 10px; /* Rounded corners */
+  transform: translateY(-40px); /* Move the container up further */
 }
 
 /* Section Titles */
@@ -34,6 +35,7 @@
   font-weight: bold;
   color: #6e9735; /* Title color matching the green */
   text-transform: uppercase; /* Optional: Gives titles a more prominent look */
+  
 }
 
 /* Grid Layout for Cards */

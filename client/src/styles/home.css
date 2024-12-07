@@ -1,23 +1,39 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Allow scrolling */
+  font-family: Arial, sans-serif;
+}
+
 .home-container {
   padding: 0;
   background-color: #f5f5f5;
   min-height: 100vh;
+  overflow-y: auto; /* Ensure scrolling */
 }
 
+/* Header Section */
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  margin-bottom: 0;
+  padding: 20px;
 }
 
 .header-segments {
-  top: 0;
   display: flex;
   justify-content: center;
-  gap: 50px; /* Reduced from 250px to 50px */
+  gap: 50px; /* Reduced spacing for better alignment */
+  font-size: 1.5rem;
+  padding: 0;
 }
 
 .segment {
@@ -36,7 +52,7 @@
   margin: 0;
   color: #666;
   font-size: 1.2rem;
-  text-align: center; /* Ensure text aligns in the center */
+  text-align: center;
 }
 
 .segment.active h2 {
@@ -54,24 +70,52 @@
   border-radius: 2px;
 }
 
+/* Video Banner Section */
+.new-container {
+  width: 100%;
+  min-height: 300px; /* Adjust video banner height */
+  overflow: hidden; /* Prevent any overflow */
+  position: relative;
+  margin-top: 20px;
+}
+
+.subsection-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make sure the video covers the container */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Content Sections */
 .schemes-section,
-.appointment-section,
 .expert-section,
 .resource-section,
-.schemes-section,
 .analytics-section {
   background-color: white;
   border-radius: 12px;
   padding: 16px;
-  margin-bottom: 16px;
+  margin: 20px auto;
+  width: 90%;
 }
 
 .search-controls {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin: 20px 0;
-  position: relative;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .date-picker-container,
@@ -80,56 +124,23 @@
   z-index: 100;
 }
 
+/* Buttons */
 .control-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 10px 20px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 6px;
   cursor: pointer;
-  min-width: 150px;
-  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .control-btn.selected {
   border-color: #2196F3;
   color: #2196F3;
-}
-
-.date-picker-wrapper {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 5px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.districts-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 200px;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 5px;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.district-item {
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.district-item:hover {
-  background: #f5f5f5;
 }
 
 .check-btn {
@@ -139,7 +150,7 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease;
 }
 
 .check-btn:hover {
@@ -151,179 +162,79 @@
   cursor: not-allowed;
 }
 
-.available-officers {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.officer-card {
-  background: #6e9735;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.no-results {
-  text-align: center;
-  padding: 20px;
-  color: #666;
-  background: #f5f5f5;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
-/* Ensure datepicker styling matches the theme */
-.react-datepicker {
-  font-family: inherit;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-
-.react-datepicker__header {
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #ddd;
-}
-
-.voice-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #6e9735;
-  border: none;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Expert and Resource Grid */
 .expert-grid,
 .resource-grid,
 .analytics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
-  margin-top: 16px;
-  
+  margin: 20px;
 }
 
 .expert-card,
 .resource-card,
 .analytics-card {
-  background-color: #f8f8f8;
-  border-radius: 12px;
-  padding: 16px;
+  background-color: white;
+  border: 1px solid #6e9735;
+  border-radius: 10px;
+  color: #6e9735;
+  padding: 20px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background-color: #6e9735;
-  color: white;
   font-size: 1.2rem;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.video-icon {
-  color: #6e9735;
-}
-
-.scheme-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.scheme-card {
-  background-color: #f8f8f8;
-  border-radius: 12px;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-h3 {
+.expert-card:hover,
+.resource-card:hover,
+.analytics-card:hover {
+  background-color: #6e9735;
   color: white;
-  margin: 0;
-  font-size: 18px;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Footer (if needed) */
+.footer {
+  background-color: #6e9735;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .search-controls {
+  .header-segments {
     flex-direction: column;
+    gap: 20px;
+    font-size: 2rem;
   }
 
-  .scheme-cards {
+  .expert-grid,
+  .resource-grid,
+  .analytics-grid {
     grid-template-columns: 1fr;
   }
 }
 
-.library-section {
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.no-officers-message {
-  text-align: center;
-  padding: 20px;
-  margin: 20px 0;
-  background: #f8f8f8;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-}
-
-.no-officers-message h4 {
-  color: #d32f2f;
-  margin-bottom: 10px;
-}
-
-.no-officers-message p {
-  color: #666;
-}
 .appointment-section {
   background-color: #6e9735;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
-  color: white; /* This will make text white for better contrast */
+  color: white;
+  transform: translateY(-40px); /* Move the container up further */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px; /* Increase padding to make the container larger */
+  margin: 20px auto; /* Space between containers */
+  width: 90%; /* Adjust width as needed */
+  max-width: 1200px; /* Max width for large screens */
+  border-radius: 12px; /* Keep rounded corners */
+  height: auto; /* Allows height to grow with content */
 }
 
-/* Keep the active state styling */
-.segment.active::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: #6e9735;
-  border-radius: 2px;
-}
-/* Expert Card Styling */
-.expert-card {
-  border: 1px solid #6e9735; /* Green border */
-  border-radius: 10px; /* Rounded corners */
-  background-color: white; /* Default white background */
-  color: #6e9735; /* Text color */
-  padding: 20px; /* Add padding */
-  margin: 10px 0; /* Vertical spacing */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: all 0.3s ease; /* Smooth transition effect */
-  text-align: center; /* Center content */
-  cursor: pointer; /* Show pointer cursor */
-}
 
-/* Hover Effect */
-.expert-card:hover {
-  background-color: #6e9735; /* Green background on hover */
-  color: white; /* White text on hover */
-  transform: translateY(-5px); /* Slight upward movement */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+@media (max-width: 768px) {
+  .appointment-section {
+    width: 95%; /* Make it slightly smaller on mobile for better fit */
+    padding: 20px; /* Adjust padding on mobile */
+  }
 }

@@ -29,6 +29,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    font-size: 1.5rem;
 }
 
 /* Filter Buttons Styling */
@@ -149,6 +150,7 @@
     .section-header {
         flex-direction: column;
         align-items: center;
+        font-size: 1.5rem;
     }
 
     .filter-controls {
