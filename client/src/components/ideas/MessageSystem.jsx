@@ -38,7 +38,7 @@ const MessageSystem = ({ ideaId, recipientId }) => {
     return (
         <Container maxWidth="md">
             <Paper sx={{ p: 2, height: '70vh', display: 'flex', flexDirection: 'column' }}>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" gutterBottom sx={{ color: '#6e9735' }}>
                     ಸಂದೇಶಗಳು
                 </Typography>
 
@@ -53,12 +53,17 @@ const MessageSystem = ({ ideaId, recipientId }) => {
                             <Paper 
                                 sx={{ 
                                     p: 1, 
-                                    bgcolor: message.sender === 'user' ? '#e3f2fd' : '#f5f5f5'
+                                    bgcolor: message.sender === 'user' ? '#e3f2fd' : '#f5f5f5',
+                                    borderRadius: '10px',
+                                    boxShadow: 2
                                 }}
                             >
                                 <ListItemText 
                                     primary={message.text}
                                     secondary={new Date(message.timestamp).toLocaleString()}
+                                    sx={{
+                                        color: message.sender === 'user' ? '#006db3' : '#000000'
+                                    }}
                                 />
                             </Paper>
                         </ListItem>
@@ -71,11 +76,27 @@ const MessageSystem = ({ ideaId, recipientId }) => {
                         value={newMessage}
                         onChange={(e) => setNewMessage(e.target.value)}
                         placeholder="ಸಂದೇಶ ಬರೆಯಿರಿ..."
+                        sx={{
+                            '& .MuiOutlinedInput-root': {
+                                '&.Mui-focused fieldset': {
+                                    borderColor: '#6e9735',
+                                },
+                            },
+                            '& .MuiInputLabel-root': {
+                                color: '#6e9735',
+                            },
+                        }}
                     />
                     <Button 
                         variant="contained"
                         onClick={sendMessage}
                         disabled={!newMessage.trim()}
+                        sx={{
+                            backgroundColor: '#6e9735',
+                            '&:hover': {
+                                backgroundColor: '#5a7c2c',
+                            },
+                        }}
                     >
                         ಕಳುಹಿಸಿ
                     </Button>

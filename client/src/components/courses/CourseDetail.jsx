@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { courses } from '../../data/courses';
 
+
 const CourseDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -37,11 +38,13 @@ const CourseDetail = () => {
             </div>
             <div className="syllabus">
                 <h3>ಪಠ್ಯಕ್ರಮ</h3>
-                <ul>
+                <div className="syllabus-container">
                     {course.syllabus.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <div className="syllabus-item" key={index}>
+                            <p>{item}</p>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
             {!isRegistered ? (
                 <button 

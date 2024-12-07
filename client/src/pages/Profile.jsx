@@ -1,119 +1,65 @@
-import React, { useState } from 'react';
-import './Profile.css';  // Import the CSS file
+import React from "react";
+import '../styles/profile.css';
 
-const Profile = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // Predefined username and password
-  const predefinedUsername = 'abc';
-  const predefinedPassword = 'abc';
-
-  // User details
-  const userDetails = {
-    username: 'user123',
-    fullName: 'John Doe',
-    email: 'johndoe@example.com',
-    phone: '+1234567890',
-    address: '123 Main St, Anytown, USA',
-    investments: '$5000',
-    coursesCompleted: 5,
-    totalSpent: '$1000',
-    membershipStatus: 'Premium',
-    lastLogin: '2024-12-01',
-  };
-
-  // Handle login logic
-  const handleLogin = () => {
-    if (username === predefinedUsername && password === predefinedPassword) {
-      setIsLoggedIn(true);
-    } else {
-      alert('Invalid username or password');
-    }
-  };
-
+const ProfilePage = () => {
   return (
-    <div className="profile-container">
-      <div className="wrapper">
-        {!isLoggedIn ? (
-          <div className="login_box">
-            <div className="login-header">
-              <span>Login</span>
-            </div>
+    <div className="container">
+      {/* Sidebar */}
+      <aside className="sidebar">
+        <ul>
+          <li className="sidebar-item active">ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</li>
+          <li className="sidebar-item">ಪ್ರಮಾಣಪತ್ರಗಳು</li>
+          <li className="sidebar-item">ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ</li>
+        </ul>
+      </aside>
 
-            <div className="input_box">
-              <input
-                type="text"
-                id="user"
-                className="input-field"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-              <label htmlFor="user" className="label">Username</label>
-              <i className="bx bx-user icon"></i>
-            </div>
-
-            <div className="input_box">
-              <input
-                type="password"
-                id="pass"
-                className="input-field"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <label htmlFor="pass" className="label">Password</label>
-              <i className="bx bx-lock-alt icon"></i>
-            </div>
-
-            <div className="remember-forgot">
-              <div className="remember-me">
-                <input type="checkbox" id="remember" />
-                <label htmlFor="remember">Remember me</label>
-              </div>
-
-              <div className="forgot">
-                <a href="#">Forgot password?</a>
-              </div>
-            </div>
-
-            <div className="input_box">
-              <input
-                type="submit"
-                className="input-submit"
-                value="Login"
-                onClick={handleLogin}
-              />
-            </div>
-
-            <div className="register">
-              <span>Don't have an account? <a href="#">Register</a></span>
-            </div>
+      {/* Left Content */}
+      <section className="left-content">
+        <header className="header">
+          <img
+            src="https://via.placeholder.com/100"
+            alt="ಪ್ರೊಫೈಲ್"
+            className="profile-image"
+          />
+          <div>
+            <h1 className="profile-name">ಜಾನ್ ಡೋ</h1>
+            <p className="profile-role">ಪ್ರಮಾಣೀಕೃತ ಹಣಕಾಸು ಶಿಕ್ಷಕ</p>
+            <p className="profile-tagline">ಕೃಷಿ ಆಧಾರಿತ ಕಲಿಕೆಗೆ ಹಿತೈಷಿ</p>
           </div>
-        ) : (
-          // Show user details after login
-          <div className="user-details-box">
-            <h2>Welcome, {userDetails.fullName}!</h2>
-            <div className="user-details">
-              <p><strong>Username:</strong> {userDetails.username}</p>
-              <p><strong>Email:</strong> {userDetails.email}</p>
-              <p><strong>Phone:</strong> {userDetails.phone}</p>
-              <p><strong>Address:</strong> {userDetails.address}</p>
-              <p><strong>Investments:</strong> {userDetails.investments}</p>
-              <p><strong>Courses Completed:</strong> {userDetails.coursesCompleted}</p>
-              <p><strong>Total Spent:</strong> {userDetails.totalSpent}</p>
-              <p><strong>Membership Status:</strong> {userDetails.membershipStatus}</p>
-              <p><strong>Last Login:</strong> {userDetails.lastLogin}</p>
-            </div>
+        </header>
+
+        <section className="section">
+          <h2>ಪ್ರೊಫೈಲ್ ಮಾಹಿತಿ</h2>
+          <p>
+            ಜಾನ್ ಡೋ ಕೃಷಿಕರಿಗೆ ಹಣಕಾಸು ವಿಷಯಗಳಲ್ಲಿ ನೆರವಾಗುವ ಅನುಭವೀ ಹಣಕಾಸು ಶಿಕ್ಷಕ. 
+            ಅವರು ಶಾಶ್ವತ ಕೃಷಿ ವಿಧಾನಗಳು ಮತ್ತು ಹಣಕಾಸು ಯೋಜನೆ ಕುರಿತು ಕಾರ್ಯಾಗಾರಗಳು ಮತ್ತು 
+            ವೆಬಿನಾರ್‌ಗಳನ್ನು ನಡೆಸಿದ್ದಾರೆ.
+          </p>
+        </section>
+
+        <section className="section">
+          <h2>ಪ್ರಮಾಣಪತ್ರಗಳು</h2>
+          <ul>
+            <li>ಕೃಷಿಗೆ ಹಣಕಾಸು ವಿಶ್ಲೇಷಕ ಪ್ರಮಾಣಪತ್ರ</li>
+            <li>ಶಾಶ್ವತ ಕೃಷಿ ವಿಧಾನಗಳ ಪ್ರಮಾಣಪತ್ರ</li>
+            <li>ಹೂಡಿಕೆ ಮತ್ತು ಹಣಕಾಸು ಯೋಜನೆ</li>
+          </ul>
+        </section>
+
+        <section className="section">
+          <h2>ಮುನ್ಸೂಚಿತ ನಿಯೋಜನೆಗಳು</h2>
+          <div className="appointment">
+            <p>ಹಣಕಾಸು ಯೋಜನೆ ಕಾರ್ಯಾಗಾರ</p>
+            <p>10 ಡಿಸೆಂಬರ್, 2024</p>
           </div>
-        )}
-      </div>
+          <div className="appointment">
+            <p>ಬೆಳೆ ವಿಮೆ ಸೆಮಿನಾರ್</p>
+            <p>15 ಡಿಸೆಂಬರ್, 2024</p>
+          </div>
+        </section>
+      </section>
     </div>
   );
 };
 
-export default Profile;
+export default ProfilePage;

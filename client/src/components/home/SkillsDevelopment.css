@@ -1,0 +1,321 @@
+/* General Styles for the Buttons and Text */
+.control-btn, .check-btn, .book-btn {
+    font-family: 'Arial', sans-serif;  /* Change font family */
+    font-weight: 600;  /* Bold text for better visibility */
+      /* Adding a subtle shadow for better contrast */
+}
+
+/* Control Buttons (Date, Location, etc.) */
+.control-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid #6e9735;
+    background-color: #6e9735; /* Background is set to green */
+    color: #6e9735;  /* Text color for contrast */
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn.selected {
+    background-color: #4b6e28;  /* Darker green when selected */
+    color: white;
+}
+
+.control-btn:hover {
+    background-color: #4b6e28; /* Darker green on hover */
+    color: white;
+    border-color: #4b6e28;
+}
+
+.control-btn svg {
+    margin-right: 10px;
+}
+
+/* Check Button */
+.check-btn {
+    padding: 10px 20px;
+    background-color: #6e9735;  /* Background is set to green */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.check-btn:disabled {
+    background-color: #a8d99c;
+    cursor: not-allowed;
+}
+
+.check-btn:hover {
+    background-color: #4b6e28; /* Darker green on hover */
+}
+
+/* Officer Cards */
+.officer-card h4 {
+    color: #6e9735;  /* Heading in green */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.officer-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* No Officers Available Message */
+.no-officers-message h4 {
+    color: #6e9735;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.no-officers-message p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Expert Section & Library Section */
+.expert-section h3, .library-section h3 {
+    color: #6e9735;  /* Title in green */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Appointment Section Heading */
+.appointment-section h3 {
+    color: white; /* Green color for the text */
+    font-size: 2.5rem; /* Increase the font size */
+    margin-bottom: 20px;
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center-align the heading */
+}
+
+/* Calendar Customization */
+.react-datepicker-wrapper {
+    display: block;
+    
+}
+
+.react-datepicker__header {
+    background-color: #6e9735; /* Green header for the calendar */
+    color: white; /* White text on the header */
+}
+
+.react-datepicker__current-month {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.react-datepicker__day {
+    color: #6e9735; /* Green for regular days */
+}
+
+.react-datepicker__day:hover {
+    background-color: #4b6e28; /* Darker green on hover */
+    color: white; /* White text on hover */
+}
+
+.react-datepicker__day--selected, .react-datepicker__day--selected:hover {
+    background-color: #4b6e28; /* Darker green for selected day */
+    color: white;
+}
+
+.react-datepicker__day--today {
+    border: 1px solid #6e9735; /* Add border to today’s date */
+}
+
+.react-datepicker__triangle {
+    display: none; /* Hide the triangle */
+}
+
+.react-datepicker__month-text {
+    font-size: 1rem;
+}
+
+/* Dropdown styling (Location picker) */
+.districts-dropdown {
+    background-color: #ffffff;
+    color: #6e9735;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.districts-dropdown .district-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.districts-dropdown .district-item:hover {
+    background-color: #f0f8f0;
+    color: #4b6e28;
+}
+
+/* Bold District Names */
+.district-item {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Officer Information - White Container */
+.officer-info-container {
+    background-color: white;  /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Appointment Details - Backdrop Filter */
+.appointment-details-container {
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+    backdrop-filter: blur(5px); /* Applying blur effect */
+    color: white; /* White text */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.appointment-details-container h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.appointment-details-container p {
+    font-size: 1rem;
+    color: white; /* White text color */
+}
+
+/* Available Officers Container */
+.available-officers {
+    background-color: white; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add spacing inside the container */
+    margin-top: 20px; /* Spacing from other elements */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #6e9735; /* Green font color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    font-weight: bold; /* Make font bold */
+}
+
+/* Available Officers Container */
+.available-officers {
+    background-color: white; /* White background */
+    padding: 20px; /* Add spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 400px; /* Limit container width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Officer Card Styling */
+.available-officers .officer-card {
+    border: 1px solid #6e9735; /* Green border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Inner padding */
+    background-color: white; /* White background */
+    color: #6e9735; /* Green text color */
+    text-align: center; /* Center align text */
+    transition: box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+.available-officers .officer-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/* Officer Name */
+.available-officers .officer-card h4 {
+    font-size: 1.3rem; /* Font size for name */
+    color: #6e9735; /* Green text */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+/* Officer Designation */
+.available-officers .officer-card p {
+    font-size: 1rem; /* Smaller font size */
+    color: #4b6e28; /* Darker green text */
+    margin-bottom: 15px; /* Space below description */
+}
+
+/* Booking Button */
+.available-officers .book-btn {
+    background-color: #6e9735; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 20px; /* Rounded button */
+    padding: 8px 20px; /* Button padding */
+    cursor: pointer; /* Pointer cursor */
+    font-weight: bold; /* Bold text */
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Booking Button Hover */
+.available-officers .book-btn:hover {
+    background-color: #4b6e28; /* Darker green on hover */
+}
+/* Available Officers Container */
+.available-officers {
+    background-color: white; /* White background */
+    padding: 20px; /* Add spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 400px; /* Limit container width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Officer Card Styling */
+.available-officers .officer-card {
+    border: 1px solid #6e9735; /* Green border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Inner padding */
+    background-color: white; /* White background */
+    color: #6e9735; /* Green text color */
+    text-align: center; /* Center align text */
+    transition: box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+.available-officers .officer-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/* Officer Name */
+.available-officers .officer-card h4 {
+    font-size: 1.3rem; /* Font size for name */
+    color: #6e9735; /* Green text */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+/* Officer Designation */
+.available-officers .officer-card p {
+    font-size: 1rem; /* Smaller font size */
+    color: #4b6e28; /* Darker green text */
+    margin-bottom: 15px; /* Space below description */
+}
+
+/* Booking Button */
+.available-officers .book-btn {
+    background-color: #6e9735; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 20px; /* Rounded button */
+    padding: 8px 20px; /* Button padding */
+    cursor: pointer; /* Pointer cursor */
+    font-weight: bold; /* Bold text */
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Booking Button Hover */
+.available-officers .book-btn:hover {
+    background-color: #4b6e28; /* Darker green on hover */
+}
+
+

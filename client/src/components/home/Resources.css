@@ -1,51 +1,116 @@
+/* General Content Container for Resources */
 .resources-content {
   padding: 20px;
+  max-width: 1200px; /* Increased maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+  background-color: #f8f8f8; /* Light background color for the whole page */
+  border-radius: 10px; /* Rounded corners */
 }
 
+/* Section Titles */
+.resources-content h2 {
+  color: #6e9735;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.resources-content h3 {
+  color: white; /* Green color for the text */
+    font-size: 2.5rem; /* Increase the font size */
+    margin-bottom: 20px;
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center-align the heading */
+}
+
+/* Section Container */
 .schemes-section {
-  margin-bottom: 30px;
+  margin-bottom: 30px; /* Space between sections */
 }
 
 .schemes-section h3 {
-  margin-bottom: 15px;
-  color: #333;
+  font-size: 1.8rem; /* Match the title font size */
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #6e9735; /* Title color matching the green */
+  text-transform: uppercase; /* Optional: Gives titles a more prominent look */
 }
 
+/* Grid Layout for Cards */
 .schemes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly larger minimum width */
+  gap: 30px; /* Increased gap between cards */
+  margin-top: 10px;
 }
 
+/* Individual Card Styling */
 .scheme-card {
   display: flex;
   align-items: center;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  padding: 20px; /* Increase padding for larger cards */
+  background-color: #f9f9f9; /* Light background for cards */
+  border: 1px solid #6e9735; /* Border matching the green theme */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  cursor: pointer; /* Indicates interactivity */
 }
 
+/* Hover Effect */
 .scheme-card:hover {
-  transform: translateY(-2px);
+  background-color: #6e9735; /* Card background changes to green */
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: #6e9735; /* Darker green border on hover */
 }
 
+/* Hover Effect: Icon and Text */
+.scheme-card:hover svg {
+  color: white; /* Icon turns white */
+}
+
+.scheme-card:hover div p {
+  color: white; /* Text inside the card turns white */
+}
+
+/* Icon Styling */
 .scheme-card svg {
-  font-size: 2rem;
-  margin-right: 15px;
-  color: #4a90e2;
+  font-size: 3rem; /* Larger icon size */
+  margin-right: 20px;
+  color: #6e9735; /* Default icon color matching the theme */
+  transition: color 0.3s ease; /* Smooth transition for icon color */
 }
 
+/* Card Text Content */
 .scheme-card div {
   flex: 1;
 }
 
 .scheme-card p {
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.6; /* Increased line height for better readability */
+  color: #333; /* Default dark gray for text */
+  transition: color 0.3s ease; /* Smooth transition for text color */
 }
 
 .scheme-card p:first-child {
   font-weight: bold;
+  color: #6e9735; /* Default highlight first line in green */
+  font-size: 1.2rem; /* Larger font size */
 }
+
+/* Container for Specific Section */
+.schemes-list-container {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.schemes-list-container h2 {
+  color: #6e9735;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+

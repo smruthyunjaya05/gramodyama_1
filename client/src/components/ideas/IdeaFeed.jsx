@@ -62,8 +62,8 @@ const IdeaFeed = () => {
     };
 
     return (
-        <Container maxWidth="lg" sx={{ py: 4 }}>
-            <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
+        <Container maxWidth="lg" sx={{ py: 4, bgcolor: '#f9f9f9' }}>
+            <Typography variant="h4" gutterBottom sx={{ mb: 4, color: '#6e9735' }}>
                 ಹೊಸ ಕಲ್ಪನೆಗಳು
             </Typography>
 
@@ -78,14 +78,21 @@ const IdeaFeed = () => {
                                 boxShadow: 6,
                                 transform: 'translateY(-2px)',
                                 transition: 'all 0.3s ease'
-                            }
+                            },
+                            bgcolor: '#ffffff',
+                            borderRadius: 2,
+                            boxShadow: 2
                         }}
                     >
                         <CardContent>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                <Avatar sx={{ mr: 2 }}>{idea.ownerName?.[0] || 'U'}</Avatar>
+                                <Avatar sx={{ mr: 2, bgcolor: '#6e9735', color: '#fff' }}>
+                                    {idea.ownerName?.[0] || 'U'}
+                                </Avatar>
                                 <Box>
-                                    <Typography variant="h5">{idea.title}</Typography>
+                                    <Typography variant="h5" sx={{ color: '#6e9735' }}>
+                                        {idea.title}
+                                    </Typography>
                                     <Typography variant="subtitle2" color="textSecondary">
                                         {idea.ownerName}
                                     </Typography>
@@ -96,10 +103,16 @@ const IdeaFeed = () => {
                                 label={idea.category} 
                                 color="primary" 
                                 size="small" 
-                                sx={{ mb: 2 }}
+                                sx={{
+                                    mb: 2,
+                                    bgcolor: '#6e9735',
+                                    color: '#fff'
+                                }}
                             />
 
-                            <Typography paragraph>{idea.description}</Typography>
+                            <Typography paragraph sx={{ color: '#333' }}>
+                                {idea.description}
+                            </Typography>
 
                             <Box sx={{ 
                                 display: 'flex', 
@@ -110,21 +123,21 @@ const IdeaFeed = () => {
                                 borderTop: '1px solid #eee'
                             }}>
                                 <Box sx={{ display: 'flex', gap: 2 }}>
-                                    <IconButton onClick={(e) => handleLike(e, idea.id)}>
+                                    <IconButton onClick={(e) => handleLike(e, idea.id)} sx={{ color: '#6e9735' }}>
                                         <ThumbUp />
-                                        <Typography variant="caption" sx={{ ml: 1 }}>
+                                        <Typography variant="caption" sx={{ ml: 1, color: '#6e9735' }}>
                                             {idea.stats?.likes || 0}
                                         </Typography>
                                     </IconButton>
-                                    <IconButton>
+                                    <IconButton sx={{ color: '#6e9735' }}>
                                         <Comment />
-                                        <Typography variant="caption" sx={{ ml: 1 }}>
+                                        <Typography variant="caption" sx={{ ml: 1, color: '#6e9735' }}>
                                             {idea.stats?.comments?.length || 0}
                                         </Typography>
                                     </IconButton>
-                                    <IconButton>
+                                    <IconButton sx={{ color: '#6e9735' }}>
                                         <Visibility />
-                                        <Typography variant="caption" sx={{ ml: 1 }}>
+                                        <Typography variant="caption" sx={{ ml: 1, color: '#6e9735' }}>
                                             {idea.stats?.views || 0}
                                         </Typography>
                                     </IconButton>
@@ -135,6 +148,13 @@ const IdeaFeed = () => {
                                         variant="contained" 
                                         startIcon={<MonetizationOn />}
                                         onClick={(e) => handleInvestClick(e, idea)}
+                                        sx={{
+                                            bgcolor: '#6e9735',
+                                            '&:hover': {
+                                                bgcolor: '#567a2f',
+                                            },
+                                            color: '#fff',
+                                        }}
                                     >
                                         ಹೂಡಿಕೆ ಮಾಡಿ
                                     </Button>

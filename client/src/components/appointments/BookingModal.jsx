@@ -4,6 +4,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
+import './BookingModal.css'; // Add this stylesheet for custom styling
 
 const BookingModal = ({ open, onClose, officer, selectedDate }) => {
     const [selectedTime, setSelectedTime] = useState('');
@@ -20,7 +21,7 @@ const BookingModal = ({ open, onClose, officer, selectedDate }) => {
     };
 
     return (
-        <Dialog open={open} onClose={onClose}>
+        <Dialog open={open} onClose={onClose} className="booking-modal">
             <DialogTitle>ಭೇಟಿ ಕಾದಿರಿಸಿ</DialogTitle>
             <DialogContent>
                 <div className="booking-details">
@@ -28,7 +29,7 @@ const BookingModal = ({ open, onClose, officer, selectedDate }) => {
                     <p>ದಿನಾಂಕ: {selectedDate?.toLocaleDateString()}</p>
                     <div className="time-slots">
                         <h4>ಲಭ್ಯವಿರುವ ಸಮಯಗಳು:</h4>
-                        {officer?.timeSlots.map(time => (
+                        {officer?.timeSlots.map((time) => (
                             <button
                                 key={time}
                                 className={`time-slot ${selectedTime === time ? 'selected' : ''}`}
@@ -41,11 +42,12 @@ const BookingModal = ({ open, onClose, officer, selectedDate }) => {
                 </div>
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose}>ರದ್ದುಮಾಡಿ</Button>
+                <Button onClick={onClose} className="cancel-button">ರದ್ದುಮಾಡಿ</Button>
                 <Button 
                     onClick={handleBooking} 
-                    disabled={!selectedTime}
-                    variant="contained"
+                    disabled={!selectedTime} 
+                    variant="contained" 
+                    className="confirm-button"
                 >
                     ದೃಢೀಕರಿಸಿ
                 </Button>

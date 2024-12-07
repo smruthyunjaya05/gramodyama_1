@@ -167,7 +167,7 @@ const CreatePost = () => {
             </Dialog>
 
             <Box sx={{ py: 4 }}>
-                <Typography variant="h4" gutterBottom>
+                <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold',color:'#6e9735' }}>
                     ನಿಮ್ಮ ಕಲ್ಪನೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ
                 </Typography>
 
@@ -180,6 +180,15 @@ const CreatePost = () => {
                         onChange={handleInputChange}
                         margin="normal"
                         required
+                        sx={{
+                            '& .MuiInputBase-root': {
+                                borderColor:'#6e9735',
+                            },
+                            '& .MuiInputLabel-root': {
+                                fontSize: '0.875rem', // Shrink label size
+                                fontWeight: 'normal',
+                            },
+                        }}
                     />
                     <Box sx={{ position: 'relative' }}>
                         <TextField
@@ -191,6 +200,21 @@ const CreatePost = () => {
                             onChange={(e) => setPostData({ ...postData, description: e.target.value })}
                             margin="normal"
                             required
+                            sx={{
+                                '& .MuiInputBase-root': {
+                                    borderColor:'#6e9735',
+                                },
+                                '& .MuiInputLabel-root': {
+                                    fontSize: '0.875rem', // Shrink label size
+                                    fontWeight: 'normal',
+                                },
+                                '& .MuiFormLabel-root': {
+                                    fontSize: '0.875rem', // Shrink the label size
+                                },
+                                '& .MuiInputBase-input': {
+                                    padding: '12px 14px', // Adjust padding
+                                },
+                            }}
                         />
                         <IconButton
                             onClick={toggleListening}
@@ -215,6 +239,11 @@ const CreatePost = () => {
                         value={postData.ownerName}
                         onChange={handleInputChange}
                         margin="normal"
+                        sx={{
+                            '& .MuiInputBase-root': {
+                                borderColor:'#6e9735',
+                            },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -223,6 +252,11 @@ const CreatePost = () => {
                         value={postData.ownerEmail}
                         onChange={handleInputChange}
                         margin="normal"
+                        sx={{
+                            '& .MuiInputBase-root': {
+                                borderColor:'#6e9735',
+                            },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -231,6 +265,11 @@ const CreatePost = () => {
                         value={postData.ownerPhone}
                         onChange={handleInputChange}
                         margin="normal"
+                        sx={{
+                            '& .MuiInputBase-root': {
+                                borderColor:'#6e9735',
+                            },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -239,6 +278,11 @@ const CreatePost = () => {
                         value={postData.requiredInvestment}
                         onChange={handleInputChange}
                         margin="normal"
+                        sx={{
+                            '& .MuiInputBase-root': {
+                                borderColor:'#6e9735',
+                            },
+                        }}
                     />
                     <TextField
                         fullWidth
@@ -247,10 +291,32 @@ const CreatePost = () => {
                         value={postData.videoLink}
                         onChange={handleInputChange}
                         margin="normal"
+                        sx={{
+                            '& .MuiInputBase-root': {
+                                borderColor:'#6e9735',
+                            },
+                        }}
                     />
-                    <Button variant="contained" color="primary" type="submit" sx={{ mt: 3 }} fullWidth>
-                        ಹಂಚಿಕೊಳ್ಳಿ
-                    </Button>
+                    <Button 
+  variant="contained" 
+  type="submit" 
+  sx={{ 
+    mt: 3, 
+    backgroundColor: '#6e9735', 
+    color: '#fff',  // Ensure text is readable on the green background
+    '&:hover': {
+      backgroundColor: '#5b8230' // Darker shade on hover
+    },
+    '& .MuiButton-root': {
+      borderRadius: '4px', // Optional: if you want a custom border radius
+    }
+  }} 
+  fullWidth
+>
+  ಹಂಚಿಕೊಳ್ಳಿ
+</Button>
+  
+
                 </form>
             </Box>
         </Container>

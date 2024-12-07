@@ -67,14 +67,16 @@ const IdeaDetail = () => {
     if (!idea) return <Typography>Loading...</Typography>;
 
     return (
-        <Container maxWidth="md" sx={{ py: 4 }}>
-            <Card sx={{ p: 3 }}>
-                <Typography variant="h4" gutterBottom>
+        <Container maxWidth="md" sx={{ py: 4, bgcolor: '#f9f9f9' }}>
+            <Card sx={{ p: 3, bgcolor: '#ffffff', boxShadow: 3, borderRadius: 2 }}>
+                <Typography variant="h4" gutterBottom sx={{ color: '#6e9735' }}>
                     {idea.title}
                 </Typography>
 
                 <Box sx={{ my: 3 }}>
-                    <Typography variant="h6">ಪ್ರತಿಕ್ರಿಯೆಗಳು</Typography>
+                    <Typography variant="h6" sx={{ color: '#6e9735', fontWeight: 'bold' }}>
+                        ಪ್ರತಿಕ್ರಿಯೆಗಳು
+                    </Typography>
                     <Box sx={{ mt: 2, mb: 3 }}>
                         <TextField
                             fullWidth
@@ -83,11 +85,30 @@ const IdeaDetail = () => {
                             placeholder="ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಬರೆಯಿರಿ..."
                             value={newComment}
                             onChange={(e) => setNewComment(e.target.value)}
+                            sx={{
+                                backgroundColor: '#f1f1f1',
+                                borderRadius: 1,
+                                '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {
+                                        borderColor: '#6e9735',
+                                    },
+                                    '&:hover fieldset': {
+                                        borderColor: '#6e9735',
+                                    },
+                                }
+                            }}
                         />
                         <Button 
                             variant="contained" 
                             onClick={handleComment}
-                            sx={{ mt: 1 }}
+                            sx={{
+                                mt: 1,
+                                bgcolor: '#6e9735',
+                                '&:hover': {
+                                    bgcolor: '#567a2f', // Slightly darker on hover
+                                },
+                                color: '#ffffff',
+                            }}
                             disabled={!newComment.trim()}
                         >
                             ಕಳುಹಿಸಿ
@@ -97,18 +118,20 @@ const IdeaDetail = () => {
                     <List>
                         {comments.map((comment, index) => (
                             <Box key={comment.id}>
-                                {index > 0 && <Divider />}
+                                {index > 0 && <Divider sx={{ bgcolor: '#6e9735' }} />}
                                 <ListItem sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', py: 2 }}>
                                     <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', mb: 1 }}>
-                                        <Avatar sx={{ mr: 2 }}>{comment.userName?.[0] || 'U'}</Avatar>
-                                        <Typography variant="subtitle2">
+                                        <Avatar sx={{ bgcolor: '#6e9735', color: '#fff', mr: 2 }}>
+                                            {comment.userName?.[0] || 'U'}
+                                        </Avatar>
+                                        <Typography variant="subtitle2" sx={{ color: '#6e9735' }}>
                                             {comment.userName || 'User'}
                                         </Typography>
                                         <Typography variant="caption" sx={{ ml: 'auto' }}>
                                             {new Date(comment.timestamp).toLocaleString()}
                                         </Typography>
                                     </Box>
-                                    <Typography>{comment.text}</Typography>
+                                    <Typography sx={{ color: '#333' }}>{comment.text}</Typography>
                                 </ListItem>
                             </Box>
                         ))}

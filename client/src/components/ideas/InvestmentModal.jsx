@@ -46,8 +46,10 @@ const InvestmentModal = ({ open, onClose, idea }) => {
 
     return (
         <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
-            <DialogTitle>ಹೂಡಿಕೆ ಮಾಡಿ</DialogTitle>
-            <DialogContent>
+            <DialogTitle sx={{ backgroundColor: '#6e9735', color: '#ffffff', borderRadius: '8px 8px 0 0' }}>
+                ಹೂಡಿಕೆ ಮಾಡಿ
+            </DialogTitle>
+            <DialogContent sx={{ backgroundColor: '#f9f9f9', padding: '20px' }}>
                 <Box sx={{ mb: 2 }}>
                     <Typography variant="body2" color="textSecondary">
                         ಕನಿಷ್ಠ: ₹{idea.investmentLimits.min}
@@ -62,6 +64,19 @@ const InvestmentModal = ({ open, onClose, idea }) => {
                     onChange={(e) => setAmount(e.target.value)}
                     margin="normal"
                     required
+                    sx={{
+                        '& .MuiInputBase-root': {
+                            borderColor: '#6e9735',
+                        },
+                        '& .MuiInputLabel-root': {
+                            color: '#6e9735',
+                        },
+                        '& .MuiOutlinedInput-root': {
+                            '&.Mui-focused fieldset': {
+                                borderColor: '#6e9735',
+                            }
+                        },
+                    }}
                 />
                 <TextField
                     fullWidth
@@ -71,13 +86,47 @@ const InvestmentModal = ({ open, onClose, idea }) => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     margin="normal"
+                    sx={{
+                        '& .MuiInputBase-root': {
+                            borderColor: '#6e9735',
+                        },
+                        '& .MuiInputLabel-root': {
+                            color: '#6e9735',
+                        },
+                        '& .MuiOutlinedInput-root': {
+                            '&.Mui-focused fieldset': {
+                                borderColor: '#6e9735',
+                            }
+                        },
+                    }}
                 />
             </DialogContent>
-            <DialogActions>
-                <Button onClick={onClose}>ರದ್ದುಮಾಡಿ</Button>
+            <DialogActions sx={{ backgroundColor: '#f9f9f9', padding: '10px' }}>
+                <Button 
+                    onClick={onClose}
+                    sx={{
+                        color: '#6e9735',
+                        '&:hover': {
+                            backgroundColor: '#e2e8d5',
+                        }
+                    }}
+                >
+                    ರದ್ದುಮಾಡಿ
+                </Button>
                 <Button 
                     onClick={handleInvest}
                     variant="contained"
+                    sx={{
+                        backgroundColor: '#6e9735',
+                        color: '#fff',
+                        '&:hover': {
+                            backgroundColor: '#5a7c2c',
+                        },
+                        '&.Mui-disabled': {
+                            backgroundColor: '#d0e0b3',
+                            color: '#b0b0b0',
+                        },
+                    }}
                     disabled={
                         !amount || 
                         amount < idea.investmentLimits.min || 

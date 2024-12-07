@@ -4,14 +4,14 @@ export const libraryContent = {
             id: 1,
             title: "ಸಾವಯವ ಕೃಷಿ ಪರಿಚಯ",
             description: "ಸಾವಯವ ಕೃಷಿಯ ಮೂಲ ತತ್ವಗಳು",
-            url: "https://www.youtube.com/embed/...",
+            url: "https://www.youtube.com/embed/lRyXlvIJFWI", // Updated embed URL
             category: "agriculture"
         },
         {
             id: 2,
             title: "ಮಾರುಕಟ್ಟೆ ವಿಶ್ಲೇಷಣೆ",
             description: "ಕೃಷಿ ಉತ್ಪನ್ನಗಳ ಮಾರುಕಟ್ಟೆ ಮಾಹಿತಿ",
-            url: "https://www.youtube.com/embed/...",
+            url: "https://www.youtube.com/embed/...", // Placeholder for other videos
             category: "market"
         }
     ],

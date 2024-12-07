@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { courses } from '../../data/courses';
+import '../../styles/courses.css';
 
 const CoursesList = () => {
     const navigate = useNavigate();

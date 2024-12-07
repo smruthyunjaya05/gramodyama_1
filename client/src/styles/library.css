@@ -1,3 +1,4 @@
+/* General Library Page Styling */
 .library-page {
     padding: 30px;
     max-width: 1400px;
@@ -7,20 +8,22 @@
 
 .library-page h2 {
     font-size: 2.5rem;
-    color: #1a237e;
+    color: #6e9735; /* Primary Color */
     text-align: center;
     margin-bottom: 30px;
-    border-bottom: 3px solid #2196F3;
+    border-bottom: 3px solid #6e9735; /* Primary Color for border */
     padding-bottom: 15px;
+    font-weight: bold;
 }
 
-.videos-container,
-.articles-container {
+/* Videos Container */
+.videos-container {
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
+/* Section Header */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -28,103 +31,158 @@
     margin-bottom: 2rem;
 }
 
+/* Filter Buttons Styling */
 .filter-controls {
     display: flex;
     gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
-    padding: 0.5rem 1rem;
-    border: 2px solid #3f51b5;
-    border-radius: 20px;
-    background: transparent;
-    color: #3f51b5;
+    padding: 0.7rem 1.5rem;
+    border: 2px solid #6e9735; /* Primary Border Color */
+    border-radius: 25px;
+    background-color: transparent; /* Transparent background */
+    color: #6e9735; /* Primary Text Color */
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    text-transform: uppercase;
+    transition: all 0.3s ease; /* Smooth transitions */
 }
 
+.filter-btn:hover,
 .filter-btn.active {
-    background: #3f51b5;
-    color: white;
+    background-color: #6e9735; /* Primary Green Background on Hover/Active */
+    color: white; /* White Text */
+    border-color: #4b6e28; /* Slightly Darker Green Border */
+    transform: scale(1.05); /* Slightly enlarge the button */
 }
 
-.videos-grid,
-.articles-grid {
+/* For better button text contrast when active */
+.filter-btn.active {
+    color: white; /* Ensure active text remains white */
+}
+
+
+/* Videos Grid - Single Column Layout */
+.videos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 2rem; /* Space between videos */
     margin-top: 1rem;
 }
 
-.video-card,
-.article-card {
-    background: white;
-    border-radius: 12px;
+/* Video Card Styling - No Background */
+.video-card {
+    border: none; /* Remove border */
+    border-radius: 15px; /* Maintain rounded corners */
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none; /* Remove box shadow */
 }
 
-.video-card:hover,
-.article-card:hover {
-    transform: translateY(-5px);
+.video-card:hover {
+    transform: translateY(-8px);
 }
 
+/* Video Thumbnail */
 .video-card iframe {
     width: 100%;
-    aspect-ratio: 16/9;
+    height: 400px; /* Large video height */
+    border: none;
 }
 
+/* Content Information - Text in #6e9735 */
 .content-info {
-    padding: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    background: transparent; /* Remove background color */
 }
 
 .content-info h3 {
-    color: #333;
+    color: #6e9735; /* Primary Color */
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .content-info p {
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    color: #6e9735; /* Text in Primary Color */
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
+/* Category Tag - Styled with Primary Color */
 .category-tag {
     display: inline-block;
-    padding: 0.3rem 0.8rem;
-    background: #e3f2fd;
-    color: #1976d2;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #e8f5e9; /* Light Green Background */
+    color: #6e9735;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
+/* Read More Link - Hover Effect in Dark Green */
 .read-more {
     display: inline-block;
     margin-top: 1rem;
-    color: #3f51b5;
+    color: #6e9735;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .read-more:hover {
     text-decoration: underline;
+    color: #4b6e28; /* Darker Shade for Hover */
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .library-page {
         padding: 15px;
     }
-    
-    .filter-controls {
-        flex-wrap: wrap;
+
+    .section-header {
+        flex-direction: column;
+        align-items: center;
     }
-    
-    .videos-grid,
-    .articles-grid {
-        grid-template-columns: 1fr;
+
+    .filter-controls {
+        justify-content: center;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .video-card iframe {
+        height: 250px; /* Adjust video height for small screens */
     }
 }
+/* Article Grid Layout */
+.articles-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 1rem; /* Space between article cards */
+    margin-top: 1rem;
+}
+
+/* Add spacing between article cards */
+.article-card {
+    margin-bottom: 2rem; /* Adds gap below each article card */
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+

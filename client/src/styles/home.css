@@ -1,20 +1,23 @@
 .home-container {
-  padding: 16px;
+  padding: 0;
   background-color: #f5f5f5;
   min-height: 100vh;
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 16px 0;
-  margin-bottom: 24px;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .header-segments {
+  top: 0;
   display: flex;
-  gap: 24px;
+  justify-content: center;
+  gap: 50px; /* Reduced from 250px to 50px */
 }
 
 .segment {
@@ -33,10 +36,11 @@
   margin: 0;
   color: #666;
   font-size: 1.2rem;
+  text-align: center; /* Ensure text aligns in the center */
 }
 
 .segment.active h2 {
-  color: #4CAF50;
+  color: #6e9735;
 }
 
 .segment.active::after {
@@ -46,7 +50,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #4CAF50;
+  background-color: #6e9735;
   border-radius: 2px;
 }
 
@@ -54,12 +58,14 @@
 .appointment-section,
 .expert-section,
 .resource-section,
+.schemes-section,
 .analytics-section {
   background-color: white;
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 16px;
 }
+
 .search-controls {
   display: flex;
   gap: 20px;
@@ -99,7 +105,7 @@
   margin-top: 5px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .districts-dropdown {
@@ -110,7 +116,7 @@
   background: white;
   border: 1px solid #ddd;
   border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-top: 5px;
   max-height: 300px;
   overflow-y: auto;
@@ -128,7 +134,7 @@
 
 .check-btn {
   padding: 10px 20px;
-  background: #4CAF50;
+  background: #6e9735;
   color: white;
   border: none;
   border-radius: 6px;
@@ -153,10 +159,10 @@
 }
 
 .officer-card {
-  background: white;
+  background: #6e9735;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -180,11 +186,12 @@
   background-color: #f5f5f5;
   border-bottom: 1px solid #ddd;
 }
+
 .voice-btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #4CAF50;
+  background-color: #6e9735;
   border: none;
   color: white;
   display: flex;
@@ -199,6 +206,7 @@
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 16px;
   margin-top: 16px;
+  
 }
 
 .expert-card,
@@ -212,10 +220,14 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  background-color: #6e9735;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .video-icon {
-  color: #4CAF50;
+  color: #6e9735;
 }
 
 .scheme-cards {
@@ -235,7 +247,7 @@
 }
 
 h3 {
-  color: #333;
+  color: white;
   margin: 0;
   font-size: 18px;
 }
@@ -244,19 +256,20 @@ h3 {
   .search-controls {
     flex-direction: column;
   }
-  
+
   .scheme-cards {
     grid-template-columns: 1fr;
   }
 }
 
 .library-section {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .no-officers-message {
   text-align: center;
   padding: 20px;
@@ -274,21 +287,43 @@ h3 {
 .no-officers-message p {
   color: #666;
 }
-
-.no-officers-message {
-    text-align: center;
-    padding: 20px;
-    margin: 20px 0;
-    background: #f8f8f8;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
+.appointment-section {
+  background-color: #6e9735;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  color: white; /* This will make text white for better contrast */
 }
 
-.no-officers-message h4 {
-    color: #d32f2f;
-    margin-bottom: 10px;
+/* Keep the active state styling */
+.segment.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #6e9735;
+  border-radius: 2px;
+}
+/* Expert Card Styling */
+.expert-card {
+  border: 1px solid #6e9735; /* Green border */
+  border-radius: 10px; /* Rounded corners */
+  background-color: white; /* Default white background */
+  color: #6e9735; /* Text color */
+  padding: 20px; /* Add padding */
+  margin: 10px 0; /* Vertical spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition effect */
+  text-align: center; /* Center content */
+  cursor: pointer; /* Show pointer cursor */
 }
 
-.no-officers-message p {
-    color: #666;
+/* Hover Effect */
+.expert-card:hover {
+  background-color: #6e9735; /* Green background on hover */
+  color: white; /* White text on hover */
+  transform: translateY(-5px); /* Slight upward movement */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }

@@ -87,27 +87,27 @@ const InvestmentPage = () => {
     return (
         <>
             <Container maxWidth="md" sx={{ py: 4 }}>
-                <Card sx={{ p: 3 }}>
-                    <Typography variant="h4" gutterBottom>
+                <Card sx={{ p: 3, backgroundColor: '#f9f9f9', boxShadow: 3 }}>
+                    <Typography variant="h4" gutterBottom sx={{ color: '#6e9735' }}>
                         ಹೂಡಿಕೆ ಮಾಡಿ
                     </Typography>
 
                     <Box sx={{ my: 3 }}>
-                        <Typography variant="h6">{idea.title}</Typography>
+                        <Typography variant="h6" sx={{ color: '#6e9735' }}>{idea.title}</Typography>
                         <Typography color="textSecondary">{idea.category}</Typography>
                     </Box>
 
-                    <Divider sx={{ my: 3 }} />
+                    <Divider sx={{ my: 3, borderColor: '#6e9735' }} />
 
                     <Box sx={{ mb: 3 }}>
-                        <Typography variant="h6">ಮಾಲೀಕರ ವಿವರಗಳು</Typography>
+                        <Typography variant="h6" sx={{ color: '#6e9735' }}>ಮಾಲೀಕರ ವಿವರಗಳು</Typography>
                         <Typography>ಹೆಸರು: {idea.ownerName}</Typography>
                         <Typography>ಇಮೇಲ್: {idea.ownerEmail}</Typography>
                         <Typography>ಫೋನ್: {idea.ownerPhone}</Typography>
                     </Box>
 
                     <Box sx={{ mb: 3 }}>
-                        <Typography variant="h6">ಹೂಡಿಕೆ ವಿವರಗಳು</Typography>
+                        <Typography variant="h6" sx={{ color: '#6e9735' }}>ಹೂಡಿಕೆ ವಿವರಗಳು</Typography>
                         <Typography>ಅಗತ್ಯವಿರುವ ಹೂಡಿಕೆ: ₹{idea.requiredInvestment}</Typography>
                         <Typography>ಒಟ್ಟು ಹೂಡಿಕೆ: ₹{idea.stats.investments?.total || 0}</Typography>
                     </Box>
@@ -121,6 +121,19 @@ const InvestmentPage = () => {
                         margin="normal"
                         inputProps={{ min: 1 }}
                         required
+                        sx={{
+                            '& .MuiInputBase-root': {
+                                borderColor: '#6e9735',
+                            },
+                            '& .MuiInputLabel-root': {
+                                color: '#6e9735',
+                            },
+                            '& .MuiOutlinedInput-root': {
+                                '&.Mui-focused fieldset': {
+                                    borderColor: '#6e9735',
+                                }
+                            },
+                        }}
                     />
 
                     <FormControlLabel
@@ -128,9 +141,16 @@ const InvestmentPage = () => {
                             <Checkbox 
                                 checked={termsAccepted}
                                 onChange={(e) => setTermsAccepted(e.target.checked)}
+                                sx={{
+                                    color: '#6e9735',
+                                    '&.Mui-checked': {
+                                        color: '#6e9735',
+                                    }
+                                }}
                             />
                         }
                         label="ನಾನು ಎಲ್ಲಾ ನಿಯಮಗಳನ್ನು ಒಪ್ಪುತ್ತೇನೆ"
+                        sx={{ color: '#6e9735' }}
                     />
 
                     <Button
@@ -138,7 +158,13 @@ const InvestmentPage = () => {
                         fullWidth
                         onClick={handleInvest}
                         disabled={!Number(investmentAmount) || !termsAccepted}
-                        sx={{ mt: 3 }}
+                        sx={{
+                            mt: 3,
+                            backgroundColor: '#6e9735',
+                            '&:hover': {
+                                backgroundColor: '#5a7c2c',
+                            }
+                        }}
                     >
                         ಹೂಡಿಕೆ ಮಾಡಿ
                     </Button>
@@ -150,14 +176,14 @@ const InvestmentPage = () => {
                 onClose={() => navigate('/ideas')}
                 sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             >
-                <Box sx={{ width: '80%', maxWidth: 800, bgcolor: 'background.paper', p: 4 }}>
-                    <div id="investment-certificate" style={{ 
-                        padding: '40px', 
-                        border: '10px solid #a17f1a',
+                <Box sx={{ width: '80%', maxWidth: 800, bgcolor: 'background.paper', p: 4, boxShadow: 3 }}>
+                    <div id="investment-certificate" style={{
+                        padding: '40px',
+                        border: '10px solid #6e9735', // Green border for the certificate
                         background: '#fff',
                         textAlign: 'center'
                     }}>
-                        <Typography variant="h3" sx={{ color: '#a17f1a', mb: 3 }}>
+                        <Typography variant="h3" sx={{ color: '#6e9735', mb: 3 }}>
                             ಹೂಡಿಕೆ ಪ್ರಮಾಣಪತ್ರ
                         </Typography>
 
@@ -169,7 +195,7 @@ const InvestmentPage = () => {
                             {certificateData?.investorName} ರವರು {certificateData?.businessName} ವ್ಯವಹಾರದಲ್ಲಿ
                         </Typography>
 
-                        <Typography variant="h4" sx={{ color: '#a17f1a', my: 3 }}>
+                        <Typography variant="h4" sx={{ color: '#6e9735', my: 3 }}>
                             ₹{certificateData?.amount}
                         </Typography>
 
@@ -180,24 +206,30 @@ const InvestmentPage = () => {
                         <Box sx={{ mt: 4, display: 'flex', justifyContent: 'space-between', px: 4 }}>
                             <Box>
                                 <Typography>{certificateData?.date}</Typography>
-                                <Divider>ದಿನಾಂಕ</Divider>
+                                <Divider sx={{ borderColor: '#6e9735' }}>ದಿನಾಂಕ</Divider>
                             </Box>
                             <Box>
                                 <Typography>{certificateData?.ownerName}</Typography>
-                                <Divider>ಮಾಲೀಕರ ಸಹಿ</Divider>
+                                <Divider sx={{ borderColor: '#6e9735' }}>ಮಾಲೀಕರ ಸಹಿ</Divider>
                             </Box>
                         </Box>
 
-                        <Typography variant="caption" sx={{ mt: 4, display: 'block' }}>
+                        <Typography variant="caption" sx={{ mt: 4, display: 'block', color: '#6e9735' }}>
                             Certificate ID: {certificateData?.certificateId}
                         </Typography>
                     </div>
 
-                    <Button 
-                        variant="contained" 
+                    <Button
+                        variant="contained"
                         onClick={downloadCertificate}
-                        fullWidth 
-                        sx={{ mt: 2 }}
+                        fullWidth
+                        sx={{
+                            mt: 2,
+                            backgroundColor: '#6e9735',
+                            '&:hover': {
+                                backgroundColor: '#5a7c2c',
+                            }
+                        }}
                     >
                         ಪ್ರಮಾಣಪತ್ರವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ
                     </Button>

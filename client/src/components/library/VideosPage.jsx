@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { experts } from '../../data/experts';
 import { VideoCall } from '@mui/icons-material';
+import '../../styles/library.css'
 
 const VideosPage = () => {
     const [selectedFilter, setSelectedFilter] = useState('all');

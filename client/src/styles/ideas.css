@@ -1,0 +1,119 @@
+/* General container styles */
+.container {
+    background-color: #f5f5f5;  /* Light background */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    color: #333;
+    margin-top: 30px;
+}
+
+h4 {
+    font-size: 2rem;
+    color: #6e9735;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form input,
+form select,
+form textarea {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #6e9735;
+    box-shadow: 0 0 5px rgba(110, 151, 53, 0.7);
+}
+
+form label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Textarea styles */
+textarea {
+    min-height: 150px;
+}
+
+/* Mic Icon */
+.mic-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mic-icon:hover {
+    cursor: pointer;
+}
+
+/* Button Styles */
+button[type="submit"] {
+    background-color: #6e9735;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #5b7d2c;
+}
+
+/* Snackbar Error Message */
+.MuiSnackbar-root {
+    z-index: 9999;
+}
+
+.MuiAlert-root {
+    background-color: #f44336;  /* Red color for error */
+    color: white;
+}
+
+/* Dialog Styles */
+.MuiDialog-root {
+    font-family: 'Roboto', sans-serif;
+}
+
+.MuiDialogTitle-root {
+    color: #6e9735;
+    font-weight: bold;
+}
+
+.MuiDialogContent-root {
+    font-size: 1rem;
+}
+
+.MuiDialogActions-root button {
+    font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        gap: 15px;
+    }
+}
