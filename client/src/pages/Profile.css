@@ -1,0 +1,175 @@
+/* Profile.css */
+.profile-container {
+    background-image: url("http://codingstella.com/wp-content/uploads/2024/01/download-6-scaled.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh; /* Ensure it covers the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  :root {
+    --primary-color: #c6c3c3;
+    --second-color: #ffffff;
+    --black-color: #000000;
+  }
+  
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2); /* Overlay for better visibility of form */
+  }
+  
+  .login_box {
+    position: relative;
+    width: 450px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 140px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .login-header span {
+    font-size: 30px;
+    color: var(--black-color);
+  }
+  
+  .input_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  
+  .input-field {
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    background: transparent;
+    color: var(--second-color);
+    padding: 15px 20px; /* Ensure padding is consistent */
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    outline: none;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+  
+  #user,
+  #pass {
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: 0.2s;
+    font-size: 16px;
+    color: var(--primary-color);
+  }
+  
+  .input-field:focus ~ .label,
+  .input-field:valid ~ .label {
+    top: -10px;
+    left: 20px;
+    font-size: 12px;
+    background-color: var(--second-color);
+    padding: 0 10px;
+    border-radius: 30px;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    font-size: 20px;
+  }
+  
+  .input-submit {
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .input-submit:hover {
+    background: var(--second-color);
+  }
+  
+  .register {
+    text-align: center;
+  }
+  
+  .register a {
+    font-weight: 500;
+  }
+  
+  .user-details-box {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background for user details */
+    padding: 2em;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 80%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    color: var(--second-color);
+  }
+  
+  .user-details-box h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 1em;
+  }
+  
+  .user-details p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  @media only screen and (max-width: 564px) {
+    .wrapper {
+      padding: 20px;
+    }
+  
+    .login_box {
+      padding: 7.5em 1.5em 4em 1.5em;
+    }
+  
+    .user-details-box {
+      width: 100%;
+    }
+  }
+  

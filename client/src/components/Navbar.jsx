@@ -12,7 +12,7 @@ const Navbar = () => {
       
       <NavLink to="/notifications">
         <Notifications />
-        <span>ಸೂಚನೆಗಳು</span>
+        <span>ಚಾಟ್ ಬಾಟ್</span>
       </NavLink>
       <NavLink to="/profile">
         <Person />
